@@ -20,7 +20,15 @@ class Board
             if x[1] == x[2] && x[2] == x[3] && x[1] != ""
                 return true
             end
+            #check if any columns are winners
             if @Matrix[1][index] == @Matrix[2][index] &&  @Matrix[2][index] == @Matrix[3][index] && @Matrix[3][index] != ""
+                return true
+            end
+            #check if any diagonals are winners
+            if @Matrix[1][1] == @Matrix[2][2] &&  @Matrix[2][2] == @Matrix[3][3] && @Matrix[3][3] != ""
+                return true
+            end
+            if @Matrix[3][1] == @Matrix[2][2] &&  @Matrix[2][2] == @Matrix[1][3] && @Matrix[2][2] != ""
                 return true
             end
         end
